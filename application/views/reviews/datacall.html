@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <style>
+
+    </style>
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+    <style type="text/css">
+        .as-console-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-height: 150px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            border-top: 1px solid #000;
+            display: none;
+        }
+
+        .as-console {
+            background: #e9e9e9;
+            border: 1px solid #ccc;
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .as-console-row {
+            display: table-row;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .as-console-row:after {
+            display: table-cell;
+            padding: 3px 6px;
+            color: rgba(0, 0, 0, .35);
+            border: 1px solid #ccc;
+            content: attr(data-date);
+            vertical-align: top;
+        }
+
+        .as-console-row+.as-console-row>* {
+            border: 1px solid #ccc;
+        }
+
+        .as-console-row-code {
+            width: 100%;
+            white-space: pre-wrap;
+            padding: 3px 5px;
+            display: table-cell;
+            font-family: monospace;
+            font-size: 13px;
+            vertical-align: middle;
+        }
+
+        .as-console-error:before {
+            content: 'Error: ';
+            color: #f00;
+        }
+
+        .as-console-assert:before {
+            content: 'Assertion failed: ';
+            color: #f00;
+        }
+
+        .as-console-info:before {
+            content: 'Info: ';
+            color: #00f;
+        }
+
+        .as-console-warning:before {
+            content: 'Warning: ';
+            color: #e90
+        }
+
+        @-webkit-keyframes flash {
+            0% {
+                background: rgba(255, 240, 0, .25);
+            }
+
+            100% {
+                background: none;
+            }
+        }
+
+        @-moz-keyframes flash {
+            0% {
+                background: rgba(255, 240, 0, .25);
+            }
+
+            100% {
+                background: none;
+            }
+        }
+
+        @-ms-keyframes flash {
+            0% {
+                background: rgba(255, 240, 0, .25);
+            }
+
+            100% {
+                background: none;
+            }
+        }
+
+        @keyframes flash {
+            0% {
+                background: rgba(255, 240, 0, .25);
+            }
+
+            100% {
+                background: none;
+            }
+        }
+
+        .as-console-row-code,
+        .as-console-row:after {
+            -webkit-animation: flash 1s;
+            -moz-animation: flash 1s;
+            -ms-animation: flash 1s;
+            animation: flash 1s;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <button class="btn" data-url="https://postman-echo.com/get?data=api1">API 1</button>
+    <button class="btn" data-url="https://postman-echo.com/get?data=api2">API 2</button>
+    <button class="btn" data-url="https://postman-echo.com/get?data=api3">API 3</button>
+
+    <div id="content">asdfghjkl</div>
+    <script type="text/javascript">
+        function renderContent(content) {
+            $('#content').text(content)
+        }
+
+        $('.btn').on('click', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'https://cors.io/?' + $(this).data('url'),
+                success: function (result) {
+                    // renderContent(result);
+                    console.log(data('url'));
+                }
+            })
+        })
+    </script>
+
+    <div class="as-console-wrapper">
+        <div class="as-console"></div>
+    </div>
+</body>
+
+</html>
